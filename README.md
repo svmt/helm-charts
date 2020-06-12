@@ -1,6 +1,7 @@
 ## Helm charts repo with github action 
 
-Example of building Helm packages and serving helm repository with github pages 
+Example of building Helm packages and serving helm repository with github pages [https://svmt.github.io/helm-charts/]
+(https://svmt.github.io/helm-charts/)
 
 ### Add helm repo
 
