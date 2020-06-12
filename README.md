@@ -1,7 +1,4 @@
-## Helm charts repo with github action 
-
-Example of building Helm packages and serving helm repository with github pages [https://svmt.github.io/helm-charts/]
-(https://svmt.github.io/helm-charts/)
+# SVMT helm-charts repo
 
 ### Add helm repo
 
@@ -14,11 +11,12 @@ NAME        	URL
 svmt        	https://svmt.github.io/helm-charts   
 ```
 
-### Install example package
+### Install example package with Helm 3
 
 Install nginx chart from svmt repo using helm upgrade action with `-i` flag to force install when missing 
 
 ```bash
+$ helm repo update
 $ helm upgrade -i nginx-svmt svmt/nginx
 Release "nginx-svmt" does not exist. Installing it now.
 NAME: nginx-svmt
@@ -32,7 +30,7 @@ NOTES:
   echo "Visit http://127.0.0.1:8080 to use your application"
   kubectl --namespace default port-forward $POD_NAME 8080:80
 
-serge@ws:/data/svmt/helm-charts$ kubectl get po -w
+$ kubectl get po -w
 NAME                         READY   STATUS              RESTARTS   AGE
 nginx-svmt-9cc497959-ztwbj   0/1     ContainerCreating   0          3s
 nginx-svmt-9cc497959-ztwbj   1/1     Running             0          10s
