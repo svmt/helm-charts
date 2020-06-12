@@ -1,4 +1,8 @@
-# SVMT helm-charts repo
+# svmt helm-charts repo
+
+[https://svmt.github.io/helm-charts](https://svmt.github.io/helm-charts)
+
+All examples bellow are Helm v3
 
 ### Add helm repo
 
@@ -11,7 +15,7 @@ NAME        	URL
 svmt        	https://svmt.github.io/helm-charts   
 ```
 
-### Install example package with Helm 3
+### Install example package
 
 Install nginx chart from svmt repo using helm upgrade action with `-i` flag to force install when missing 
 
