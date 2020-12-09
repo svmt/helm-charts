@@ -1,0 +1,8 @@
+global:
+  projectID:
+  # Kubernetes Service Account to bind to GSA
+  # GSA IAmServiceAccount name will be base on KSA and prefixed with `cnrm-`
+  serviceAccount:
+    create: false
+    # If creat is true and name empty KSA will be auto-generated see template function
+    name:
