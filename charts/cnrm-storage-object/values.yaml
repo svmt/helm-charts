@@ -1,11 +1,11 @@
 global:
-  projectID: svmt-k8s
+  projectID:
   # Kubernetes Service Account to bind to GSA
   # GSA IAmServiceAccount name will be base on KSA and prefixed with `cnrm-`
   serviceAccount:
-    create: true
+    create: false
     # If creat is true and name empty KSA will be auto-generated see template function
-    name: chartmuseum
+    name:
 
 # This will be the name of the storage bucket prefixed with GCP ProjectID
 nameOverride: ""
