@@ -3,6 +3,16 @@ entries:
   iambase:
   - apiVersion: v2
     appVersion: 0.1.0
+    created: "2020-12-09T23:15:23.882678285Z"
+    description: A Helm chart for Kubernetes
+    digest: 62ea99e7f296029bfc6c48d3b5b45c933d3e1d560962ed35a508c052601f813e
+    name: iambase
+    type: application
+    urls:
+    - https://github.com/svmt/helm-charts/releases/download/iambase-0.1.1/iambase-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 0.1.0
     created: "2020-12-09T22:50:20.352035176Z"
     description: A Helm chart for Kubernetes
     digest: d201cc2a3fb632f6bacd39e1095e7740f784aa08571d083528ee9bec7b6b74b2
@@ -22,4 +32,19 @@ entries:
     urls:
     - https://github.com/svmt/helm-charts/releases/download/nginx-0.1.0/nginx-0.1.0.tgz
     version: 0.1.0
+  storage-object:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2020-12-09T23:15:24.084190036Z"
+    dependencies:
+    - name: iambase
+      repository: https://svmt.github.io/helm-charts
+      version: 0.1.0
+    description: A Helm chart for Kubernetes
+    digest: 86b7570b9cde3fd0937dadf21268169c92694976b0b0615a6672461c7bad8125
+    name: storage-object
+    type: application
+    urls:
+    - https://github.com/svmt/helm-charts/releases/download/storage-object-0.1.1/storage-object-0.1.1.tgz
+    version: 0.1.1
 generated: "2020-06-12T16:03:34.318442852Z"
