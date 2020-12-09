@@ -1,5 +1,5 @@
 global:
-  projectID:
+  projectID: svmt-k8s
   # Kubernetes Service Account to bind to GSA
   # GSA IAmServiceAccount name will be base on KSA and prefixed with `cnrm-`
   serviceAccount:
