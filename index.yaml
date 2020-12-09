@@ -35,6 +35,20 @@ entries:
   storage-object:
   - apiVersion: v2
     appVersion: 0.1.0
+    created: "2020-12-09T23:47:31.188557226Z"
+    dependencies:
+    - name: iambase
+      repository: https://svmt.github.io/helm-charts
+      version: 0.1.1
+    description: A Helm chart for Kubernetes
+    digest: 93f1d03fe32981361cf78572cd566b5fd6656da103a886a443b511808e817e23
+    name: storage-object
+    type: application
+    urls:
+    - https://github.com/svmt/helm-charts/releases/download/storage-object-0.1.2/storage-object-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 0.1.0
     created: "2020-12-09T23:15:24.084190036Z"
     dependencies:
     - name: iambase
