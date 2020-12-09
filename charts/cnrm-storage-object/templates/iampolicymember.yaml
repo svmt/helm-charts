@@ -1,0 +1,28 @@
+apiVersion: iam.cnrm.cloud.google.com/v1beta1
+kind: IAMPolicyMember
+metadata:
+  name: {{ .Values.global.serviceAccount.name }}-resource-binding
+  namespace: {{ .Release.Namespace }}
+  annotations:
+    cnrm.cloud.google.com/project-id: {{ .Values.global.projectID }}
+spec:
+  member: serviceAccount:cnrm-{{ .Values.global.serviceAccount.name }}@{{ .Values.global.projectID }}.iam.gserviceaccount.com
+  role: roles/storage.objectAdmin
+  resourceRef:
+    apiVersion: storage.cnrm.cloud.google.com/v1beta1
+    kind: StorageBucket
+    name: {{ template "storage-object.fullname" . }}
+
+---
+apiVersion: iam.cnrm.cloud.google.com/v1beta1
+kind: IAMPolicyMember
+metadata:
+  name: {{ .Values.global.serviceAccount.name }}-custom-role-binding
+  namespace: {{ .Release.Namespace }}
+spec:
+  member: serviceAccount:cnrm-{{ .Values.global.serviceAccount.name }}@{{ .Values.global.projectID }}.iam.gserviceaccount.com
+  role: projects/{{ .Values.global.projectID }}/roles/{{ template "storage-object.customRoleNamePrefix" . }}.custom.role
+  resourceRef:
+    apiVersion: resourcemanager.cnrm.cloud.google.com/v1beta1
+    kind: Project
+    external: projects/{{ .Values.global.projectID }}

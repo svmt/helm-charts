@@ -1,4 +1,5 @@
 global:
+  # GCP Project ID
   projectID:
   # Kubernetes Service Account to bind to GSA
   # GSA IAmServiceAccount name will be base on KSA and prefixed with `cnrm-`

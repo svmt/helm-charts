@@ -1,0 +1,13 @@
+apiVersion: storage.cnrm.cloud.google.com/v1beta1
+kind: StorageBucket
+metadata:
+  annotations:
+    cnrm.cloud.google.com/force-destroy: {{ .Values.storageBucket.annotations.forceDestroy | quote }}
+    cnrm.cloud.google.com/deletion-policy: {{ .Values.storageBucket.annotations.deletionPolicy }}
+    cnrm.cloud.google.com/project-id: {{ .Values.global.projectID }}
+  name: {{ template "storage-object.fullname" . }}
+  namespace: {{ .Release.Namespace }}
+spec:
+  {{- with .Values.storageBucket.spec -}}
+  {{ toYaml . | nindent 2 }}
+  {{- end }}

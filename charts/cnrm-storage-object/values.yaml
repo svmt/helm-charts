@@ -1,0 +1,22 @@
+global:
+  projectID:
+  # Kubernetes Service Account to bind to GSA
+  # GSA IAmServiceAccount name will be base on KSA and prefixed with `cnrm-`
+  serviceAccount:
+    create: true
+    # If creat is true and name empty KSA will be auto-generated see template function
+    name: chartmuseum
+
+# This will be the name of the storage bucket prefixed with GCP ProjectID
+nameOverride: ""
+# Completely overrides storage bucket name including the prefix (GCP ProjectID) ! warning the name must be unique in whole GCP
+fullnameOverride: ""
+
+storageBucket:
+  annotations:
+    forceDestroy: false
+    deletionPolicy: abandon
+  spec:
+    location: europe-west4
+    storageClass: STANDARD
+    uniformBucketLevelAccess: true

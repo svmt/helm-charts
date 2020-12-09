@@ -1,0 +1,9 @@
+1. Get all created resources:
+
+kubectl --namespace {{ .Release.Namespace }} get IAMServiceAccount cnrm-{{ .Values.serviceAccount }}
+kubectl --namespace {{ .Release.Namespace }} get IAMPolicy workload-identity-{{ .Values.serviceAccount }}
+kubectl --namespace {{ .Release.Namespace }} get IAMPolicyMember storage-admin-{{ .Values.serviceAccount }}
+kubectl --namespace {{ .Release.Namespace }} get IAMCustomRole role.{{ .Values.serviceAccount }}
+kubectl --namespace {{ .Release.Namespace }} get IAMPolicyMember custom-role.{{ .Values.serviceAccount }}
+kubectl --namespace {{ .Release.Namespace }} get StorageBucket {{ .Values.global.projectID }}-{{ .Values.bucketNameSuffix }}
+

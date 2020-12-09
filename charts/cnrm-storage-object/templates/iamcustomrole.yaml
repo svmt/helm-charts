@@ -1,0 +1,15 @@
+apiVersion: iam.cnrm.cloud.google.com/v1beta1
+kind: IAMCustomRole
+metadata:
+  # name can not contain hyphens or it will through an error
+  name: {{ template "storage-object.customRoleNamePrefix" . }}.custom.role
+  namespace: {{ .Release.Namespace }}
+  annotations:
+    cnrm.cloud.google.com/project-id: {{ .Values.global.projectID }}
+spec:
+  title: Custom Role {{ template "storage-object.serviceAccountName" . }}
+  description: Custom role permissions for {{ template "storage-object.serviceAccountName" . }}
+  permissions:
+    - storage.objects.list
+    - storage.objects.create
+  stage: GA
