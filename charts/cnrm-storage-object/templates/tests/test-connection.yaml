@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: {{ include "storage-object.fullname" . }}-workload-identity-test
+  labels:
+    {{- include "storage-object.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test-success
+spec:
+  containers:
+    - name: workload-identity-test
+      image: google/cloud-sdk:slim
+      command:
+        - gsutil
+      args:
+        - ls
+        - "-r"
+        - "gs://{{ include "storage-object.fullname" . }}"
+  restartPolicy: Never
+  serviceAccountName: {{ .Values.global.serviceAccount.name }}

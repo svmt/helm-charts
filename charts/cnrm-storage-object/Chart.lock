@@ -1,0 +1,6 @@
+dependencies:
+- name: iambase
+  repository: https://svmt.github.io/helm-charts
+  version: 0.1.1
+digest: sha256:a83f2f4e42885803d753f217c6ddb9b30bc6b0fbf33847eff221b1912522cd8b
+generated: "2020-12-10T09:34:47.667429+01:00"
